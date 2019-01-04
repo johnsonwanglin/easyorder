@@ -1,0 +1,15 @@
+{
+  "pages":[
+    "pages/index/index",
+    "pages/pay/pay",
+    "pages/order/order",
+    "pages/admin/admin"
+  ],
+  "window":{
+    "backgroundTextStyle":"light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "轻松订餐",
+    "navigationBarTextStyle":"black",
+    "enablePullDownRefresh": true
+  }
+}

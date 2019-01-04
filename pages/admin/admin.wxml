@@ -1,0 +1,24 @@
+<form bindsubmit="formSubmit" bindreset="formReset">
+ <view class="uploader-text">
+      <text>添加新菜单</text>
+  </view>
+  <view class="section">
+  <view class="section__title">分类:</view>
+  <picker class="inputcss" bindchange="bindPickerChange" value="{{index}}" range="{{menus}}"  range-key="{{'name'}}">
+    <view class="picker">当前选择：{{menus[index].name}}</view>
+  </picker>
+  </view>
+  <view class="section">
+    <view class="section__title">菜单:</view>
+    <input class="inputcss" name="title" placeholder=""/>
+  </view>
+  <view class="section">
+    <view class="section__title">价格:</view>
+    <input class="inputcss" type="number" name="price" placeholder=""/>
+  </view>
+  
+  <view class="btn-area">
+    <button formType="submit">提交</button>
+    <button formType="reset">重置</button>
+  </view>
+</form>

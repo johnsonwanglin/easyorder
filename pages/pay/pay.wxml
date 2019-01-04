@@ -1,0 +1,9 @@
+<view class="contaner">
+  <view class="info">
+    <icon type="success" size="80" color="green"/>
+    <text>操作成功，谢谢。</text>
+  </view>
+  <view class="info img">
+    <image src="image/code.png" />
+  </view>
+</view>
