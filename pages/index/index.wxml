@@ -60,7 +60,7 @@
     <view class="wx-popup-mini-title test" style='width:100px;height:100px'>加料</view>
   </van-popup> -->
   <!--底部弹出框-->
-  <view class="{{bottomFlag ? 'bottom-bar' : 'bottom-bar hidden'}}">
+  <view class="bottom-bar">
     <view class="count">
         共 <text class="num">{{orderCount.num}} 件</text>     
         合计 <text class="num">{{orderCount.money}} 元</text> 
