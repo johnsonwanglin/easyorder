@@ -5,6 +5,8 @@ const app = getApp()
 Page({
   data: {
     tabIndex: 0,
+    show: false,
+    title: "good",
     // 统计商品数量和价格
     orderCount: {
       num: 0,
@@ -80,7 +82,6 @@ Page({
                 key: "menus",
                 data: that.data.menus
               });
-
             }
           });
         }
@@ -188,5 +189,41 @@ Page({
   onLoad: function() {
     wx.clearStorage();
 
+  },
+  add: function(){
+    console.info("123");
+    let that = this;
+    that.setData({
+      show: true
+    });
+  },
+  onClose() {
+    this.setData({ show: false });
+  },
+  onReady: function () {
+    //获得popup组件
+    this.popup = this.selectComponent("#popup");
+  },
+  showPopup(event) {
+    console.log(this.popup)
+    this.popup.title = "good";
+    let id = event.currentTarget.dataset.id;
+    let index = event.currentTarget.dataset.index;
+    let title = event.currentTarget.dataset.title;
+    console.log(id)
+    console.log(index)
+    console.log(title)
+    console.log(this.popup.title)
+    this.popup.showPopup(id,title,this);
+  },
+  //取消事件
+  _error() {
+    console.log('你点击了取消');
+    this.popup.hidePopup();
+  },
+  //确认事件
+  _success() {
+    console.log('你点击了确定');
+    this.popup.hidePopup();
   }
 })

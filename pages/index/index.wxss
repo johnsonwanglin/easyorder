@@ -1,9 +1,12 @@
-/**index.wxss**/
+page{
+/* height: 100%; */
+/* background:#eee; */
+}
+/* 面板 */
 .container{
-  position:absolute;
   width:100%;
-  height:100%;
-  background:#eee;
+  height:100vh;
+  /* border: 1px solid red; */
 }
 .userinfo, .uploader, .tunnel {
   margin-top: 40rpx;
@@ -18,10 +21,14 @@
   align-items: center;
   transition: all 300ms ease;
 }
+.mainContainer {
+  width: 100%;
+  /* height: 100%; */
+  display: flex;
+}
 .aside{
-  float:left;
-  height:100%;
-  width:100px;
+  /* height:100%; */
+  width:80px;
   padding-bottom:0;
   text-align:center;
   overflow: scroll;
@@ -41,14 +48,18 @@
   background:#eee;
 }
 .item-content{
-  float:left;
-  width:calc(100% - 100px);
-  height:100%;
+  width:calc(100% - 90px);
+  /* height:100%; */
+  padding: 10px 10px;
+  display: flex;
+  flex-direction: column;
+  background:#eee;
 }
+
 .item-content .box{
-  height:calc(100% - 10px);
-  padding:10px 0 0 10px;
-  overflow: scroll;
+  /* height:calc(100% - 10px); */
+  /* padding:10px 0 0 10px; */
+  /* overflow: scroll; */
 }
 .item-content .box.active{
   padding-bottom:80px;
@@ -57,16 +68,18 @@
   width:0;
 }
 .item-content .box .item{
-  height:80px;
-  padding:10px 0 10px 10px;
+  height:60px;
+  padding:10px 30px 10px 10px;
   margin-bottom:10px;
   background:#fff;
+  border-radius: 6px;
+  display: flex;
+  justify-content: space-between;
 }
 .item-content .box .item image{
   display:block;
-  float:left;
-  height:80px;
-  width:90px;
+  height:60px;
+  width:60px;
   margin-right:10px;
 }
 .item-content .box .item text{
@@ -75,19 +88,38 @@
 }
 .item-content .box .item .title{
   margin-bottom:5px;
-  font-weight:bolder;
+  /* font-weight:bolder; */
 }
+
+.item-content .box .item .priceBox{
+  display: flex;
+  margin-top: 20px;
+  justify-content: space-between;
+}
+
 .item-content .box .item .price{
   color:red;
-  font-size:18px;
+  font-size:12px;
   margin-bottom:5px;
+  width: 105px
 }
+
+.item-content .box .item .btnAdd {
+   display: inline-flex;
+   background: orange;
+   height: 45rpx;
+   width: 45rpx;
+   justify-content: center;
+   align-items: center;
+   text-align: center;
+   border-radius: 5px;
+}
+
 .item-content .box .item .btn{
   display:block;
-  float:right;
   margin:-10px 10px 0 0;
   padding:5px 10px;
-  font-size:14px;
+  font-size:14rpx;
   color:#fff;
   background:orange;
   border-radius:20px;
@@ -100,10 +132,12 @@
     position: fixed;
     bottom:0;
     width:100%;
-    height:80px;
-    line-height:80px;
+    height:60px;
+    line-height:70px;
     background:#fff;
     box-shadow: 0 -5px 10px #ccc;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
 }
 .bottom-bar.hidden{
   display:none;
@@ -123,12 +157,13 @@
 .bottom-bar .btn{
     height:40px;
     width:50px;
-    margin:20px 10px 0 0;
+    margin:13px 10px 0 0;
     color:#fff;
     line-height:40px;
     text-align:center;
     font-size:16px;
     background:orange;
+    border-radius: 5px
 }
 .uploader-text, .tunnel-text {
   width: 100%;
@@ -136,4 +171,7 @@
   font-size: 34rpx;
   color: #007aff;
   text-align: center;
+}
+.test{
+  background: red
 }
