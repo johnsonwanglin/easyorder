@@ -1,0 +1,25 @@
+/* pages/count/count.wxss */
+
+.select{
+  display: flex;
+  margin: 35rpx
+}
+.time{
+  border: 5rpx solid orange;
+  width: 300rpx;
+  height: 30rpx;
+  border-radius: 10rpx;
+}
+.classSelect{
+  display: flex
+}
+.btn{
+  border-radius: 10rpx;
+  width:150rpx;
+  margin: 5rpx;
+  height: 55rpx;
+  background: orange;
+  font-size: 30rpx;
+  text-align: center;
+  line-height: 55rpx
+}

@@ -3,7 +3,7 @@
 <view class="container">
   <!--头顶栏 -->
   <view class="uploader">
-      <navigator url="../admin/admin" open-type="navigate" class="uploader-text">
+      <navigator url="../count/count" open-type="navigate" class="uploader-text">
         <text>后台管理</text>
       </navigator>
   </view>
@@ -34,12 +34,18 @@
           <text class="title">{{item.title}}</text>
           <view class='priceBox'>
             <text class="price">￥ {{item.price}} 元</text>
-            <view class="opera" bindtap='showPopup' data-id="{{item._id}}" data-index="{{index}}"
+
+            <view class="opera">
+              <button class="{{item.active ? 'btnAdd active' : 'btnAdd'}}" 
+                  disabled="{{item.active ? true : false}}"
+                  bindtap='addOrder' data-id="{{item.id}}" data-index="{{index}}">+</button> 
+            </view>
+            <!-- <view class="opera" bindtap='showPopup' data-id="{{item._id}}" data-index="{{index}}"
              data-title="{{item.title}}">
               <view class='btnAdd'>
                 <text>+</text>
               </view>
-            </view> 
+            </view>  -->
           </view>
         </view>
       </view>
@@ -55,8 +61,8 @@
     bind:error="_error"  
     bind:success="_success">
   </popup>
-
-  <!-- <van-popup show="true" bind:close="onClose">
+<!-- 
+  <van-popup show="true" close-on-click-overlay="true"  bind:close="onClose">
     <view class="wx-popup-mini-title test" style='width:100px;height:100px'>加料</view>
   </van-popup> -->
   <!--底部弹出框-->

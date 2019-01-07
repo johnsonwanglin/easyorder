@@ -1,0 +1,34 @@
+<view>
+  <view>
+    <view class='select'>
+      <text>时间：</text>
+      <!--时间选择框 -->
+      <input class='time' value='{{ time }}' bindfocus="focus"></input>
+      <button class='btn' bindtap='search'>搜索</button>
+      <!--分类下拉框  -->
+      <!-- <view class="classSelect">
+      </view> -->
+    </view>
+  </view>
+  <!--内容显示框  -->
+  <view class='mainContainer'>
+    <view>
+      <text>总人数：{{ peopleCount }}</text>
+    </view>
+    <view>
+       <view wx:for="{{itemObject}}" data-index="{{index}}">
+        {{index}}：{{itemObject[index]}}
+        </view>
+    </view>
+  </view>
+  <view hidden='{{ isHidden }}'>
+    <van-datetime-picker
+    type="date"
+    value="{{ currentDate }}"
+    min-date="{{ minDate }}"
+    max-date="{{ maxDate }}"
+    bind:confirm="confirm"
+    bind:cancel="onCancel"
+    />
+  </view>
+</view>
